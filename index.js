@@ -1,12 +1,5 @@
 var slideIndex = 0;
 
-
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
-
-var express = require('express');
-
 showSlides();
 
 function showSlides() {
