@@ -72,6 +72,14 @@ a {
   outline: none;
 }
 
+.shopping-cart {
+    float: left;
+    margin-top: -40px;
+    margin-left: 20px;
+    padding: 0px;
+    lineheight: 38px;
+}
+
 .navbar {
 
 }
@@ -255,4 +263,61 @@ li a:hover {
     margin: 10px 0;
     font-size: 36px;
     font-weight: 400;
+}
+
+
+/***************************************************************/
+
+.twit-container {
+    margin: 50px 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.twit {
+    flex: 0 1 28%;
+    display: flex;
+    margin: 2px;
+    padding: 20px;
+    border: 1px solid #dadada;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.twit-content {
+    flex: 1 1 80%;
+    margin-left: 10px;
+}
+
+.twit-content p {
+    margin: 0;
+}
+
+.twit-content .twit-attribution {
+    margin-top: 8px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#create-twit-button {
+    /*
+  position: relative;
+  right: 40px;
+  bottom: 20px;
+  text-align: center;
+*/
+    height: 60px;
+    width: 60px;
+    border: none;
+    /*border-radius: 50%;*/
+    font-size: 10px;
+    background-color: #ff1010;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.image {
+    width: 200px;
+    height: 200px;
 }

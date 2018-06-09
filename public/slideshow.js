@@ -1,5 +1,3 @@
-/*
-
 var slideIndex = 0;
 
 showSlides();
@@ -19,15 +17,4 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-*/
-
-
-var cart = document.getElementById('shopping-cart-button');
-
-cart.addEventListener('click', openModal);
-
-function openModal() {
-    console.log("button pressed");
-
 }

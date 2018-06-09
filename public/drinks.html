@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Snack Shack</title>
+
+    <!-- This is a stylesheet that includes the font you should use: Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="pracStyle.css" media="screen">
+
+    <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
+
+
+    <!--  <script src = "/twitTemplate.js" defer> </script>-->
+
+    <script src="index.js" charset="utf-8" defer></script>
+    <!--<script src="server.js" charset="utf-8" defer></script>-->
+
+</head>
+
+  <body>
+
+
+
+
+    <header>
+
+
+      <div class = "top">
+      <a href="#"><h1 class="site-title">  Snack Shack</h1></a>
+      <li class = "headeritem header-search">
+      <input type="text" id="header-search-input" placeholder="Search...">
+      <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
+    </li>
+    <li class = "headbutton shopping-cart">
+      <button type="button" id="shopping-cart-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+    </li>
+    </div>
+
+</header>
+
+<main>
+
+  <nav class="navbar">
+    <ul class="navlist">
+      <li class="navitem navlink"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+      <li class="navitem navlink"><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Snacks</a></li>
+      <li class="navitem navlink"><a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>Drinks</a></li>
+
+    </ul>
+  </nav>
+
+  <div class = "twit-container">
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+</div>
+</div>
+</div>
+  <!-- <div class="twit-content">
+      <p class="twit-text">
+        Sitting in web dev... This class is so awesome!
+      </p>
+      <p class="twit-attribution">
+        <a href="#">CSMajor2018</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+ </select>
+ </div>
+ </div>
+ </div>
+
+
+    <!--<div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        Anyone watch the baseball game last night?  The Beavs are still in 1st place!
+      </p>
+      <p class="twit-attribution">
+        <a href="#">BeaverBeliever</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+</div>
+</div>
+</div>
+    <!--
+
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        A body in motion must remain in motion unless acted upon by an outside force.
+      </p>
+      <p class="twit-attribution">
+        <a href="#">NewtonRulez</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  </select>
+  </div>
+  </div>
+  </div>
+    <!--
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        Huh?
+      </p>
+      <p class="twit-attribution">
+        <a href="#">ConfusedTweeterer</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  </select>
+  </div>
+  </div>
+  </div>
+    <!--
+
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        Why did the calf cross the road?
+      </p>
+      <p class="twit-attribution">
+        <a href="#">Setup</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+</div>
+</div>
+</div>
+    <!--
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        To get to the udder side!
+      </p>
+      <p class="twit-attribution">
+        <a href="#">Punchline</a>
+      </p>
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  </select>
+  </div>
+  </div>
+  </div>
+    <!--
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        Any questions about flexboxes?
+      </p>
+      <p class="twit-attribution">
+        <a href="#">Hess</a>
+      </p>
+
+    </div>
+  -->
+  </article>
+
+  <article class="twit">
+    <div>
+        <img class = "image"  src="images/gb.jpg">
+    <div>
+    <div class = "push">
+    <button type="button" id="create-twit-button"> add to cart</button>
+    <select>
+  <option value="Quantity">Quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+</div>
+</div>
+</div>
+    <!--
+    <div class="twit-icon">
+      <i class="fas fa-bullhorn"></i>
+    </div>
+    <div class="twit-content">
+      <p class="twit-text">
+        Friendly reminder: your taxes were due yesterday.
+      </p>
+      <p class="twit-attribution">
+        <a href="#">TheIRS</a>
+      </p>
+    </div>-->
+  </article>
+
+
+
+<article class="twit">
+  <div>
+      <img class = "image"  src="images/gb.jpg">
+  <div>
+  <div class = "push">
+  <button type="button" id="create-twit-button"> add to cart</button>
+  <select>
+<option value="Quantity">Quantity</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</div>
+</div>
+</div>
+
+
+  <!--
+  <div class="twit-icon">
+    <i class="fas fa-bullhorn"></i>
+  </div>
+  <div class="twit-content">
+    <p class="twit-text">
+      Friendly reminder: your taxes were due yesterday.
+    </p>
+    <p class="twit-attribution">
+      <a href="#">TheIRS</a>
+    </p>
+  </div>-->
+</article>
+
+</div>
+
+
+</main>
+
+</body>
