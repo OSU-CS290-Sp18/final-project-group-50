@@ -13,6 +13,8 @@ var mongoDBName = process.env.MONGO_DB_NAME;
 
 var mongoDB = null;
 
+
+
 //var mongoURL =
 //	'mongodb://' + mongoUsername + ':' + mongoPassword + '@' +
 //	mongoHost + ':' + mongoPort + '/' + mongoDBName;
@@ -29,25 +31,9 @@ MongoClient.connect(mongoURL, function (err, client) {
     });
 });
 
+
+
 /*
-
-const assert = require('assert');
-
-// Connection URL
-const url = 'mongodb://localhost:27017';
-
-// Database Name
-const dbName = 'myproject';
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-    assert.equal(null, err);
-    console.log("Connected successfully to server");
-
-    const db = client.db(dbName);
-
-    client.close();
-});
 
 */
 
@@ -66,8 +52,37 @@ app.get('*', function (req, res) {
 
 app.get('/', function (req, res) {
     console.log('Going to index');
-    res.sendFile('/pracIndex.html');
+    res.sendFile(path.join(__dirname, '../public', 'pracIndex.html'));
 
+});
+
+/*
+app.get('/snacks', function (req, res, next) {
+    var catalogueCollection = mongoDB.collection('catalogue');
+    catalogueCollection.find().toArray(function (err, products) {
+        if (err) {
+            res.status(500).send("Error fetching people from DB.");
+        } else {
+            //res.status(200).sendFile(path.join(__dirname, 'public', 'catalogue.html'));
+        }
+    });
+});
+
+*/
+
+app.get('/snacks', function (req, res, next) {
+    var drink = req.params.person.toLowerCase();
+    var catalogueCollection = mongoDB.collection('products');
+    catalogueCollection.find({ type: snack }).toArray(function (err, snackDocs) {
+        if (err) {
+            res.status(500).send("Error fetching person from DB.");
+        } else if (snackDocs.length > 0) {
+            
+            res.status(200).sendFile('snacks.html', snackDocs[0]);
+        } else {
+            next();
+        }
+    });
 });
 /*
 
@@ -83,4 +98,8 @@ app.get('/sitemap', function (req, res) {
 app.listen(port, function () {
       console.log("== Server is listening on port", port);
 });
+
+
+
+
 */
