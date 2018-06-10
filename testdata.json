@@ -1,0 +1,18 @@
+{
+    "productID": "chips",
+    "productName": "placeholder1",
+    "price": "$2.99"
+	
+};
+{
+    "productID": "soda",
+    "name": "placeholder2",
+    "price": "$3.99"
+	
+};
+{
+    "productID": "candy",
+    "name": "placeholder3",
+    "price": "$1.99"
+	
+};
