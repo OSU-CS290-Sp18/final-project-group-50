@@ -11,9 +11,9 @@ var mongoUsername = process.env.MONGO_USERNAME;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
 
+var DBName = 'catalogue';
+
 var mongoDB = null;
-
-
 
 //var mongoURL =
 //	'mongodb://' + mongoUsername + ':' + mongoPassword + '@' +
@@ -21,21 +21,46 @@ var mongoDB = null;
 
 var mongoURL = 'mongodb://localhost:27017';
 
+/*
+
 MongoClient.connect(mongoURL, function (err, client) {
     if (err) {
-        throw err;
+        console.log("Error: mongo client not connected");
+        //throw err;
     }
-    db = mongoDBDatabase = client.db(mongoDBName);
+    //db = mongoDBDatabase = client.db(mongoDBName);
+
     app.listen(3000, function () {
         console.log("== Server listening on port 3000");
+
     });
+
+    
 });
+
+*/
 
 
 
 /*
 
 */
+
+const insertDocuments = function (db, callback) {
+    // Get the documents collection
+    const collection = db.collection('documents');
+    // Insert some documents
+    collection.insertMany([
+      { a: 1 }, { a: 2 }, { a: 3 }
+    ], function (err, result) {
+        assert.equal(err, null);
+        assert.equal(3, result.result.n);
+        assert.equal(3, result.ops.length);
+        console.log("Inserted 3 documents into the collection");
+        callback(result);
+    });
+}
+
 
 
 
@@ -44,20 +69,19 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
+app.get('/', function (req, res) {
+    console.log('Going to index');
+    res.status(200).sendFile(path.join(__dirname, 'public', 'pracIndex.html'));
+
+});
 
 app.get('*', function (req, res) {
     console.log('reached 404');
-      res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
-});
-
-app.get('/', function (req, res) {
-    console.log('Going to index');
-    res.sendFile(path.join(__dirname, '../public', 'pracIndex.html'));
-
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 /*
-app.get('/snacks', function (req, res, next) {
+app.get('/drinks', function (req, res, next) {
     var catalogueCollection = mongoDB.collection('catalogue');
     catalogueCollection.find().toArray(function (err, products) {
         if (err) {
@@ -71,6 +95,9 @@ app.get('/snacks', function (req, res, next) {
 */
 
 app.get('/snacks', function (req, res, next) {
+
+    console.log('Going to snacks');
+
     var drink = req.params.person.toLowerCase();
     var catalogueCollection = mongoDB.collection('products');
     catalogueCollection.find({ type: snack }).toArray(function (err, snackDocs) {

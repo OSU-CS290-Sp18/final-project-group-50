@@ -15,6 +15,8 @@
   "homepage": "https://github.com/OSU-CS290-Sp18/final-project-group-50/blob/master/README.md",
   "dependencies": {
     "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
     "mongodb": "^3.0.10"
   },
   "devDependencies": {}
