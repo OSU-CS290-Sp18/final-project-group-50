@@ -1,61 +1,50 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
 
     <meta charset="utf-8">
-    <title>Snack Shack</title>
+    <title>Tweeter</title>
 
     <!-- This is a stylesheet that includes the font you should use: Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="pracStyle.css" media="screen">
+    <link rel="stylesheet" href="/pracStyle.css" media="screen">
 
     <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
     <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
-
-    <script src="index.js" charset="utf-8" defer></script>
-    <script src="server.js" charset="utf-8" defer></script>
-
-</head>
+  </head>
 
   <body>
 
-
-
-
     <header>
-
-
       <div class = "top">
-      <a href="#"><h1 class="site-title"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Snack Shack</h1></a>
-      <li class = "headeritem header-search">
-      <input type="text" id="header-search-input" placeholder="Search...">
-      <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
-          <li class="headbutton shopping-cart">
-            <button type="button" id="shopping-cart-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-        </li>
-    </li>
-    </div>
+    <a href="#"><h1 class="site-title">  Snack Shack</h1></a>
 
-</header>
+    <li class = "headeritem header-search">
+    <input type="text" id="header-search-input" placeholder="Search...">
+    <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
+  </li>
+<!--  <li class = "headbutton shopping-cart">
+    <button type="button" id="shopping-cart-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+  </li>-->
+  </div>
+    </header>
 
-    <main>
+    <main class="error-container">
+      <nav class="navbar">
+        <ul class="navlist">
+          <li class="navitem navlink"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+          <li class="navitem navlink"><a href="/snacks"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Snacks</a></li>
+          <li class="navitem navlink"><a href="/drinks"><i class="fa fa-coffee" aria-hidden="true"></i>Drinks</a></li>
+          <li class="navitem navlink"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
 
-    <nav class="navbar">
-            <ul class="navlist">
-                 <li class="navitem navlink"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-                 <li class="navitem navlink"><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Snacks</a></li>
-                 <li class="navitem navlink"><a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>Drinks</a></li>
+        </ul>
+      </nav>
+      <h2>404</h2>
+      <h3>Woops!  We couldn't find that page.</h3>
+    </main>
 
-            </ul>
-         </nav>
+  </body>
 
-        <main class="error-container">
-                <h2>404</h2>
-                <h3>Page Not Found.</h3>
-        </main>
-
-</body>
+</html>
