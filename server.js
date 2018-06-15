@@ -1,84 +1,30 @@
-/*
- * Write your routing code in this file.  Make sure to add your name and
- * @oregonstate.edu email address below.
- *
- * Name:Connor Wilson
- * Email:wilsconn@oregonstate.edu
- */
-
 var path = require('path');
 var express = require('express');
-<<<<<<< HEAD
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-
-var mongoHost = process.env.MONGO_HOST;
-var mongoPort = process.env.MONGO_PORT || '27017';
-var mongoUsername = process.env.MONGO_USERNAME;
-var mongoPassword = process.env.MONGO_PASSWORD;
-var mongoDBName = process.env.MONGO_DB_NAME;
-
-var DBName = 'catalogue';
-
-var mongoDB = null;
-
-//var mongoURL =
-//	'mongodb://' + mongoUsername + ':' + mongoPassword + '@' +
-//	mongoHost + ':' + mongoPort + '/' + mongoDBName;
-
-var mongoURL = 'mongodb://localhost:27017';
-
-/*
-
-MongoClient.connect(mongoURL, function (err, client) {
-    if (err) {
-        console.log("Error: mongo client not connected");
-        //throw err;
-    }
-    //db = mongoDBDatabase = client.db(mongoDBName);
-
-    app.listen(3000, function () {
-        console.log("== Server listening on port 3000");
-
-    });
-
-    
-});
-
-*/
-
-
-
-/*
-
-*/
-
-const insertDocuments = function (db, callback) {
-    // Get the documents collection
-    const collection = db.collection('documents');
-    // Insert some documents
-    collection.insertMany([
-      { a: 1 }, { a: 2 }, { a: 3 }
-    ], function (err, result) {
-        assert.equal(err, null);
-        assert.equal(3, result.result.n);
-        assert.equal(3, result.ops.length);
-        console.log("Inserted 3 documents into the collection");
-        callback(result);
-    });
-}
-
-
-
-
-=======
 var exphbs = require('express-handlebars');
-var data = require('./twitData.json');
->>>>>>> ChasenY
 var app = express();
-var port = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
 
-/*Added*/
+var twitdata = require('./twitData');
+
+
+
+app.engine('handlebars', exphbs({
+
+    extname: 'handlebars',
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir: __dirname + '/views/partials',
+
+}));
+app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
+
+
+var pictureData = require('./pictureurls');
+var catalogueData = require('./catalogue');
+
+
 var MongoClient = require('mongodb').MongoClient;
 var mongoHost = process.env.MONGO_HOST;
 var mongoPort = process.env.MONGO_PORT || '27017';
@@ -92,7 +38,14 @@ var DBName = 'productDB';
 var mongoURL = 'mongodb://localhost:27017';
 
 var mongoDB = null;
-/**/
+
+
+var logger = require('./logger');
+app.use(logger);
+
+
+app.use(express.static('public'));
+
 
 MongoClient.connect(mongoURL, function (err, client) {
     if (err) {
@@ -101,112 +54,22 @@ MongoClient.connect(mongoURL, function (err, client) {
     }
     db = mongoDBDatabase = client.db(DBName);
 
-    app.listen(3000, function () {
-        console.log("== Server listening on port 3000");
+    app.listen(3001, function () {
+        console.log("== Server listening on port 3001");
 
-<<<<<<< HEAD
-app.get('/', function (req, res) {
-    console.log('Going to index');
-    res.status(200).sendFile(path.join(__dirname, 'public', 'pracIndex.html'));
-
+    });
 });
 
-app.get('*', function (req, res) {
-    console.log('reached 404');
-    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
-});
+app.get('/snacks', function (req, res, next) {
 
-/*
-app.get('/drinks', function (req, res, next) {
-    var catalogueCollection = mongoDB.collection('catalogue');
-    catalogueCollection.find().toArray(function (err, products) {
+    var snackCollection = db.collection('snacks');
+
+    snackCollection.find().toArray(function (err, snackDocs) {
         if (err) {
             res.status(500).send("Error fetching people from DB.");
-        } else {
-            //res.status(200).sendFile(path.join(__dirname, 'public', 'catalogue.html'));
-        }
-    });
-});
-
-*/
-
-app.get('/snacks', function (req, res, next) {
-
-    console.log('Going to snacks');
-
-    var drink = req.params.person.toLowerCase();
-    var catalogueCollection = mongoDB.collection('products');
-    catalogueCollection.find({ type: snack }).toArray(function (err, snackDocs) {
-        if (err) {
-            res.status(500).send("Error fetching person from DB.");
         } else if (snackDocs.length > 0) {
-            
-            res.status(200).sendFile('snacks.html', snackDocs[0]);
-        } else {
-            next();
-        }
-    });
-=======
-    });
-});
-
-
-app.get('/snacks', function (req, res, next) {
-    res.status(200).sendFile(__dirname + '/public/snacks.html');
->>>>>>> ChasenY
-});
-
-app.get('/drinks', function (req, res, next) {
-
-    res.status(200).sendFile(__dirname + '/public/drinks.html');
-});
-app.get('/cart', function (req, res, next) {
-
-    res.status(200).sendFile(__dirname + '/public/cart.html');
-});
-
-
-app.use(express.static('public'));
-
-app.get('/',function (req, res,next){
-res.status(200).render('body',{
-     twit: data,
-});
-
-});
-/*
-app.get('/twits/:n',function(req,res,next){
-  var number = req.params.n;
-  console.log(typeof number);
-  console.log("number is "+ number);
-
-  if(number >= 0 || number <= 1)
-  {
-
-        if(data[number]){
-          res.status(200).render('body',{
-            twit:[data[number]]
-          });
-        }
-
-  }
-  else{
-    next();
-  }
-});
-
-
-app.get('/snacks', function (req, res, next) {
-
-    var snack = db.collection('catalogue');
-    
-    snack.find({ type: 'snack' }).toArray(function (err, snackDocs) {
-        if (err) {
-            res.status(500).send("Error fetching snack from DB.");
-        } else if (snack.length > 0) {
-            console.log("rendering body now");
-            res.status(200).render('body', {
-                twit: snackDocs[0]
+            res.status(200).render('snackspage', {
+                pic: snackDocs
             });
         } else {
             next();
@@ -214,28 +77,146 @@ app.get('/snacks', function (req, res, next) {
     });
 });
 
-app.get('*', function (req, res, next) {
-    res.status(404).sendFile(__dirname + '/public/404.html');
+app.get('/drinks', function (req, res, next) {
+
+    var drinkCollection = db.collection('drinkcollection');
+
+    drinkCollection.find().toArray(function (err, drinkDocs) {
+        if (err) {
+            res.status(500).send("Error fetching people from DB.");
+        } else if (drinkDocs.length > 0) {
+            res.status(200).render('drinkspage', {
+                pic: drinkDocs
+            });
+        } else {
+            next();
+        }
+    });
 });
 
-app.listen(3000, function (err) {
-    if (!err) {
-        console.log("== Server listening on port 3000");
+
+
+app.get('/cart', function (req, res, next) {
+    
+    res.render('cart', {
+        pic: twitdata
+    });
+    res.status(200);
+});
+
+app.get('/add', function (req, res, next) {
+
+    console.log("in main file");
+
+
+    res.status(200).render('body', {
+        twit: twitdata,
+    });
+
+});
+
+
+app.get('*', function (req, res, next) {
+  res.status(404).sendFile(__dirname + '/public/404.html');
+});
+
+app.get('*', function (req, res, next) {
+    res.status(200).sendFile(__dirname + '/public/adding.html');
+});
+
+
+
+
+app.post('/cart/add/:n', function (req, res, next) {
+
+    var num = req.params.n;
+    var url;
+    if (num == 1) {
+        console.log("number is one");
+        url = "https://i5.walmartimages.com/asr/d9ca8a3e-7155-42cd-b9cf-b77f14a25718_1.52be72f9444f75ad5b8d36fde3455cfb.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF";
     }
+    else if (num == 2) {
+        console.log("number is two")
+        url = "https://images-na.ssl-images-amazon.com/images/I/81FuiByap6L._SX355_.jpg";
+    }
+    else if (num == 3) {
+        console.log("number is two")
+        url = "https://www.fritolay.com/images/default-source/blue-bag-image/doritos-cool-ranch.png?sfvrsn=a64e563a_2";
+    }
+    else if (num == 4) {
+        console.log("number is two")
+        url = "https://images-na.ssl-images-amazon.com/images/I/71ZXdOk08nL._SY355_.jpg";
+    }
+    else if (num == 5) {
+        console.log("number is two")
+        url = "https://www.generalmillscf.com/~/media/images/product/product-detail/snacks-and-bars/bars/nature-valley/11582000-nature-valley-crunchy-oats-honey-074oz.ashx";
+    }
+    else if (num == 6) {
+        console.log("number is two")
+        url = "https://sep.yimg.com/ay/candy-crate/m-m-s-plain-candy-2ct-coming-soon-3.gif";
+    }
+
+
+    /*url =  "https://images-na.ssl-images-amazon.com/images/I/81FuiByap6L._SX355_.jpg";*/
+    var photo = 
+      {
+          pic: url,
+      };
+    twitdata.push(photo);
+    res.status(200).end();
+    console.log("added" + url);
+
 });
 
 
 /*
-app.listen(port, function () {
-<<<<<<< HEAD
-      console.log("== Server is listening on port", port);
+
+app.post('/cart/:item', function (req, res) {
+    var item = req.params.item.toLowerCase();
+
+    console.log("== Reached Something");
+
+
+  if (req.body && req.body.photoURL && req.body.caption) {
+    console.log("== Client added the following product to cart:");
+
+      // Add photo to mongoDB here.
+      
+    db.cart.insertOne(
+        {
+            pic: "https://images-na.ssl-images-amazon.com/images/I/81FuiByap6L._SX355_.jpg"
+        });
+
+
+    res.status(200).send("Photo successfully added");
+  } else {
+    res.status(400).send("Requests to this path must " +
+      "contain a JSON body with photoURL and caption " +
+      "fields.");
+  }
 });
 
 
+app.get('/cart/:item', function (req, res, next) {
 
+  var shopitem = req.params.item.toLowerCase();
+  if (shopperData[shopitem]) {
+    console.log("== req.body:", req.body);
+    if (shopitem == "oreos") {
 
-=======
-  console.log("== Server is listening on port", port);
+        console.log("~~~~~~~~~~~inserting");
+        insertItem();
+        res.status(200).sendFile(__dirname + '/public/cart.html');
+        
+    } else {
+       
+        res.status(400).send("Request needs a JSON body with caption and photoURL.");
+    }
+  } else {
+     
+    next();
+  }
 });
->>>>>>> ChasenY
+
+
 */

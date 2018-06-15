@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Snack Shack</title>
+
+    <!-- This is a stylesheet that includes the font you should use: Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/pracStyle.css" media="screen">
+
+    <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
+
+	<script src="/index.js" charset="utf-8" defer></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class = "top">
+           <a href="#"><h1 class="site-title">  Snack Shack</h1></a>
+
+    <li class = "headeritem header-search">
+        <input type="text" id="header-search-input" placeholder="Search...">
+        <button type="button" id="header-search-button"><i class="fas fa-search"></i></button>
+    </li>
+      <li class = "headbutton shopping-cart">
+          <button type="button" id="shopping-cart-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+     </li>
+     </div>
+    </header>
+
+    <main>
+
+      <nav class="navbar">
+          <ul class="navlist">
+              <li class="navitem navlink"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+              <li class="navitem navlink"><a href="/snacks"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Snacks</a></li>
+              <li class="navitem navlink"><a href="/drinks"><i class="fa fa-coffee" aria-hidden="true"></i>Drinks</a></li>
+              <li class="navitem navlink"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+
+          </ul>
+  </nav>
+
+        <h1 class="cart-header-border">    "Snacks" </h1>
+
+<div class = "product-container">
+      <article class="product">
+          <div>
+              <img class = "image"  src= "https://i5.walmartimages.com/asr/d9ca8a3e-7155-42cd-b9cf-b77f14a25718_1.52be72f9444f75ad5b8d36fde3455cfb.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart" class= "button1"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+      <article class="product">
+          <div>
+              <img class = "image"  src= "https://images-na.ssl-images-amazon.com/images/I/81FuiByap6L._SX355_.jpg" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart" class = "button2"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+      <article class="product">
+          <div>
+              <img class = "image"  src= "https://www.fritolay.com/images/default-source/blue-bag-image/doritos-cool-ranch.png?sfvrsn=a64e563a_2" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart"  class = "button3"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+          <article class="product">
+          <div>
+              <img class = "image"  src= "https://images-na.ssl-images-amazon.com/images/I/71ZXdOk08nL._SY355_.jpg" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart"  class = "button4"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+          <article class="product">
+          <div>
+              <img class = "image"  src= "https://www.generalmillscf.com/~/media/images/product/product-detail/snacks-and-bars/bars/nature-valley/11582000-nature-valley-crunchy-oats-honey-074oz.ashx" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart"  class = "button5"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+
+      <article class="product">
+          <div>
+              <img class = "image"  src= "https://sep.yimg.com/ay/candy-crate/m-m-s-plain-candy-2ct-coming-soon-3.gif" >
+          <div>
+          <div class = "push">
+          <button type="button" id="put-in-cart"  class = "button6"> add to cart</button>
+          <select>
+        <option value="Quantity">Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+      </div>
+      </div>
+      </article>
+
+    </div>
+
+
+    </main>
+
+  </body>
+
+</html>

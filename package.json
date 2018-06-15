@@ -1,23 +1,23 @@
 {
-  "name": "final-project-group-50",
+  "name": "express-serving",
   "version": "1.0.0",
-  "description": "Snack shack",
-  "main": "index.js",
+  "description": "Using mongodb, handlebars, etc.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "handlebars views/partials/product.handlebars -f public/producttemplate.js",
+    "prestart": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OSU-CS290-Sp18/master-assignment-5.git"
-  },
-  "author": "",
-  "license": "UNLICENSED",
-  "homepage": "https://github.com/OSU-CS290-Sp18/final-project-group-50/blob/master/README.md",
+  "author": "Hess",
+  "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
-    "mongodb": "^3.0.10"
-  },
-  "devDependencies": {}
+    "mongodb": "^3.0.10",
+    "nodemon": "^1.17.4"
+  }
 }

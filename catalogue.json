@@ -1,0 +1,81 @@
+{
+  "drinks": {
+
+    "gatorade blue": {
+      "pic": "images/gb.jpg",
+      "type": "drink"
+    },
+    "orange juice": {
+      "pic": "https://pics.drugstore.com/prodimg/418490/450.jpg",
+      "type": "drink"
+    },
+    "fanta": {
+      "pic": "https://www.eurofoodimports.com/v/vspfiles/photos/AZ0000169-2.jpg",
+      "type": "drink"
+    },
+    "water": {
+      "pic": "https://i5.walmartimages.com/asr/83568193-2418-40f0-8367-4fd80481e2f8_1.fc5284020d9e9b9bcd45d777a9e62bb5.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+      "type": "drink"
+    },
+    "gatorade red": {
+      "pic": "images/gatoradered.jpg",
+      "type": "drink"
+    },
+    "gatorade yellow": {
+      "pic": "images/gatoradeyellow.jpg",
+      "type": "drink"
+    },
+    "pepsi": {
+      "pic": "http://salivatives.com/wp-content/uploads/2016/11/pepsi.png",
+      "type": "drink"
+    },
+    "frapp": {
+      "pic": "https://globalassets.starbucks.com/assets/44288017d9784da6a2b98f435f8e5ca3.jpg",
+      "type": "drink"
+    },
+    "some nutrient thing that probably has 50 grams of sugar": {
+      "pic": "https://static.meijer.com/Media/007/22430/0072243011016_0600.png",
+      "type": "drink"
+    }
+  },
+
+  "snacks": {
+
+    "oreos": {
+      "pic": "images/oreos.jpg",
+      "type": "snack"
+    },
+    "fudge strips": {
+      "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Je8NsX2TjD8YnzJt8RI667fpkiNCbgYGEmi1BV07zhZBKhxa",
+      "type": "snack"
+    },
+    "chips ahoy": {
+      "pic": "https://i5.walmartimages.com/asr/ee0ca2fd-fb60-489d-a2a9-7a571e8a67a9_1.127fb9a9740c07bfb971aa8f7dc3708b.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+      "type": "snack"
+    },
+    "cheez-it": {
+      "pic": "https://target.scene7.com/is/image/Target/13009781?wid=488&hei=488&fmt=pjpeg",
+      "type": "snack"
+    },
+    "pretzel": {
+      "pic": "https://i5.walmartimages.com/asr/ed2332de-9a18-4ffa-8721-54f74071ed52_1.66eb06234341220ce87321a9acf41603.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+      "type": "snack"
+    },
+    "lays": {
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/81TLFU5Yj6L._SY550_.jpg",
+      "type": "snack"
+    },
+    "m&ms": {
+      "pic": "https://sep.yimg.com/ay/candy-crate/m-m-s-plain-candy-2ct-coming-soon-3.gif",
+      "type": "snack"
+    },
+    "granola bar": {
+      "pic": "https://www.generalmillscf.com/~/media/images/product/product-detail/snacks-and-bars/bars/nature-valley/11582000-nature-valley-crunchy-oats-honey-074oz.ashx",
+      "type": "snack"
+    },
+    "gushers": {
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/71ZXdOk08nL._SY355_.jpg",
+      "type": "snack"
+    }
+  }
+}
